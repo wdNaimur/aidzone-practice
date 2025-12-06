@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" <?php get_language_attributes() ?>>
+<html class="no-js" <?php echo language_attributes(); ?>>
 
 <head>
 
-   <meta charset="<?php bloginfo('charset'); ?>">
+   <meta charset="<?php bloginfo( 'charset' ); ?>">
 
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <meta name="description" content="">
@@ -30,7 +30,7 @@
                         <circle stroke="red" cx="190" cy="190" r="180" stroke-width="6" stroke-linecap="round"></circle>
                      </svg>
                   </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/favicon.png" alt="">
+                  <img src="<?php echo get_template_directory_uri();?>/assets/img/logo/favicon.png" alt="">
                </div>
                <p class="tp-preloader-subtitle">Loading...</p>
             </div>
@@ -48,7 +48,7 @@
                   <div class="search-top d-flex justify-content-between align-items-center">
                      <div class="search-logo">
                         <a href="index.html">
-                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo-white.png" alt="">
+                           <img src="<?php echo get_template_directory_uri();?>/assets/img/logo/logo-white.png" alt="">
                         </a>
                      </div>
                      <div class="search-close">
@@ -94,7 +94,7 @@
       <div class="tp-offcanvas-wrapper">
          <div class="tp-offcanvas-header d-flex justify-content-between align-items-center mb-50">
             <div class="tp-offcanvas-logo">
-               <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo.png" alt=""></a>
+               <a href="index.html"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo/logo.png" alt=""></a>
             </div>
             <div class="tp-offcanvas-close">
                <button class="tp-offcanvas-close-toggle"><i class="fal fa-times"></i></button>
@@ -109,16 +109,16 @@
          </div>
          <div class="tp-offcanvas-gallery mb-50">
             <a class="popup-image" href="assets/img/footer/f-4-1.jpg">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer/f-4-1.jpg" alt="">
+               <img src="<?php echo get_template_directory_uri();?>/assets/img/footer/f-4-1.jpg" alt="">
             </a>
             <a class="popup-image" href="assets/img/footer/f-4-2.jpg">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer/f-4-2.jpg" alt="">
+               <img src="<?php echo get_template_directory_uri();?>/assets/img/footer/f-4-2.jpg" alt="">
             </a>
             <a class="popup-image" href="assets/img/footer/f-4-3.jpg">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer/f-4-3.jpg" alt="">
+               <img src="<?php echo get_template_directory_uri();?>/assets/img/footer/f-4-3.jpg" alt="">
             </a>
             <a class="popup-image" href="assets/img/footer/f-4-4.jpg">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer/f-4-4.jpg" alt="">
+               <img src="<?php echo get_template_directory_uri();?>/assets/img/footer/f-4-4.jpg" alt="">
             </a>
          </div>
          <div class="tp-offcanvas-info mb-50">
@@ -146,4 +146,6 @@
       </button>
    </div>
    <!-- Back to top end -->
-   <?php echo get_template_part('template/header/header-1') ?>
+
+   
+<?php echo get_template_part('template/header/header-1'); ?>

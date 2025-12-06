@@ -1,217 +1,155 @@
 <?php
 
-/*--------------------------------------------------------------
-# PANEL: THEME SETTINGS
---------------------------------------------------------------*/
 new \Kirki\Panel(
-    'theme_settings_panel',
-    [
-        'priority'    => 10,
-        'title'       => esc_html__('Theme Settings', 'kirki'),
-        'description' => esc_html__('Modify header and footer settings.', 'kirki'),
-    ]
+	'aidzone_panel_id',
+	[
+		'priority'    => 10,
+		'title'       => esc_html__( 'Aidzone Options', 'aidzone' ),
+		'description' => esc_html__( 'My Options  Description.', 'aidzone' ),
+	]
 );
 
 
+function header_info_section(){
+    new \Kirki\Section(
+        'header_section_id',
+        [
+            'title'       => esc_html__( 'Header Settings', 'aidzone' ),
+            'description' => esc_html__( 'My Header Section Description.', 'aidzone' ),
+            'panel'       => 'aidzone_panel_id',
+            'priority'    => 160,
+        ]
+    );
 
-/*--------------------------------------------------------------
-# SECTION 1: TOP HEADER BAR
-# (Address, Email, Social Icons)
---------------------------------------------------------------*/
-new \Kirki\Section(
-    'top_header_bar',
-    [
-        'title'    => esc_html__('Top Header Bar', 'kirki'),
-        'panel'    => 'theme_settings_panel',
-        'priority' => 5,
-    ]
-);
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'address_text',
+            'label'    => esc_html__( 'Address', 'aidzone' ),
+            'section'  => 'header_section_id',
+            'default'  => esc_html__( 'The queens walk, TSV 3456', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'address_url',
+            'label'    => esc_html__( 'Address URL', 'aidzone' ),
+            'section'  => 'header_section_id',
+            'default'  => esc_html__( '#', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
 
-// Address Field
-new \Kirki\Field\Text([
-    'settings' => 'top_header_address',
-    'label'    => 'Address',
-    'section'  => 'top_header_bar',
-    'default'  => 'The queens walk, TSV 3456'
-]);
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'email_id',
+            'label'    => esc_html__( 'Email', 'aidzone' ),
+            'section'  => 'header_section_id',
+            'default'  => esc_html__( 'needhelp@mail.com', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
 
-// Address URL
-new \Kirki\Field\URL([
-    'settings' => 'top_header_address_url',
-    'label'    => 'Address URL',
-    'section'  => 'top_header_bar',
-    'default'  => '#'
-]);
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'button_text',
+            'label'    => esc_html__( 'Button', 'aidzone' ),
+            'section'  => 'header_section_id',
+            'default'  => esc_html__( 'The queens walk, TSV 3456', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'button_url',
+            'label'    => esc_html__( 'Button URL', 'aidzone' ),
+            'section'  => 'header_section_id',
+            'default'  => esc_html__( '#', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
 
-// Email Field
-new \Kirki\Field\Text([
-    'settings' => 'top_header_email',
-    'label'    => 'Email',
-    'section'  => 'top_header_bar',
-    'default'  => 'needhelp@mail.com'
-]);
-
-// Facebook URL
-new \Kirki\Field\URL([
-    'settings' => 'facebook_url',
-    'label'    => 'Facebook URL',
-    'section'  => 'top_header_bar',
-    'default'  => '',
-]);
-
-// Instagram URL
-new \Kirki\Field\URL([
-    'settings' => 'instagram_url',
-    'label'    => 'Instagram URL',
-    'section'  => 'top_header_bar',
-    'default'  => '',
-]);
-
-// Twitter URL
-new \Kirki\Field\URL([
-    'settings' => 'twitter_url',
-    'label'    => 'Twitter (X) URL',
-    'section'  => 'top_header_bar',
-    'default'  => '',
-]);
-
-// Pinterest URL
-new \Kirki\Field\URL([
-    'settings' => 'pinterest_url',
-    'label'    => 'Pinterest URL',
-    'section'  => 'top_header_bar',
-    'default'  => '',
-]);
+}
+header_info_section();
 
 
+// social 
+function header_social_section(){
+    new \Kirki\Section(
+        'header_social_section',
+        [
+            'title'       => esc_html__( 'Header Social', 'aidzone' ),
+            'description' => esc_html__( 'My Header Social Description.', 'aidzone' ),
+            'panel'       => 'aidzone_panel_id',
+            'priority'    => 160,
+        ]
+    );
 
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'fb_url',
+            'label'    => esc_html__( 'Facebook URL', 'aidzone' ),
+            'section'  => 'header_social_section',
+            'default'  => esc_html__( '#', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
 
-/*--------------------------------------------------------------
-# SECTION 2: MAIN HEADER
-# (Logo, Sticky Logo, Button, Search Toggle)
---------------------------------------------------------------*/
-new \Kirki\Section(
-    'main_header',
-    [
-        'title'    => __('Main Header', 'kirki'),
-        'panel'    => 'theme_settings_panel',
-        'priority' => 10,
-    ]
-);
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'tw_url',
+            'label'    => esc_html__( 'Twitter URL', 'aidzone' ),
+            'section'  => 'header_social_section',
+            'default'  => esc_html__( '#', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
 
-// Header Logo
-new \Kirki\Field\Image([
-    'settings' => 'header_logo',
-    'label'    => 'Header Logo',
-    'section'  => 'main_header',
-]);
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'ins_url',
+            'label'    => esc_html__( 'Instagram URL', 'aidzone' ),
+            'section'  => 'header_social_section',
+            'default'  => esc_html__( '#', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
 
-// Sticky Logo
-new \Kirki\Field\Image([
-    'settings' => 'sticky_logo',
-    'label'    => 'Sticky Logo',
-    'section'  => 'main_header',
-]);
-
-// Button Text
-new \Kirki\Field\Text([
-    'settings' => 'header_button_text',
-    'label'    => 'Button Text',
-    'section'  => 'main_header',
-    'default'  => 'Explore More'
-]);
-
-// Button Link
-new \Kirki\Field\URL([
-    'settings' => 'header_button_url',
-    'label'    => 'Button URL',
-    'section'  => 'main_header',
-    'default'  => '#'
-]);
-
-// Search Toggle
-new \Kirki\Field\Checkbox_Switch([
-    'settings' => 'header_search_toggle',
-    'label'    => 'Enable Search?',
-    'section'  => 'main_header',
-    'default'  => true
-]);
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'pin_url',
+            'label'    => esc_html__( 'Pinterest URL', 'aidzone' ),
+            'section'  => 'header_social_section',
+            'default'  => esc_html__( '#', 'aidzone' ),
+            'priority' => 10,
+        ]
+    );
+}
+header_social_section();
 
 
 
-/*--------------------------------------------------------------
-# SECTION 3: FOOTER BRAND
-# (Logo, Description, Social Icons)
---------------------------------------------------------------*/
-new \Kirki\Section(
-    'footer_brand',
-    [
-        'title'    => 'Footer Brand',
-        'panel'    => 'theme_settings_panel',
-        'priority' => 20,
-    ]
-);
+function header_logo_section(){
+    new \Kirki\Section(
+        'header_logo_section',
+        [
+            'title'       => esc_html__( 'Header Logo', 'aidzone' ),
+            'description' => esc_html__( 'My Header Logo Description.', 'aidzone' ),
+            'panel'       => 'aidzone_panel_id',
+            'priority'    => 160,
+        ]
+    );
 
-// Footer Logo
-new \Kirki\Field\Image([
-    'settings' => 'footer_logo',
-    'label'    => 'Footer Logo',
-    'section'  => 'footer_brand',
-]);
-
-// Footer Description
-new \Kirki\Field\Textarea([
-    'settings' => 'footer_desc',
-    'label'    => 'Footer Description',
-    'section'  => 'footer_brand',
-    'default'  => 'Your helpful footer description here.'
-]);
-
-// Footer Social Icons
-new \Kirki\Field\Repeater([
-    'settings' => 'footer_socials',
-    'label'    => 'Social Icons',
-    'section'  => 'footer_brand',
-    'fields'   => [
-        'icon' => ['type' => 'text', 'label' => 'Icon Class'],
-        'url'  => ['type' => 'url', 'label' => 'URL'],
-    ],
-]);
-
-
-
-/*--------------------------------------------------------------
-# SECTION 4: FOOTER SUPPORT
-# (Support Phone, Badge, Email)
---------------------------------------------------------------*/
-new \Kirki\Section(
-    'footer_support',
-    [
-        'title' => 'Footer Support',
-        'panel' => 'theme_settings_panel',
-    ]
-);
-
-// Support Phone
-new \Kirki\Field\Text([
-    'settings' => 'footer_support_phone',
-    'label'    => 'Support Phone',
-    'section'  => 'footer_support',
-    'default'  => '+888 6263 5682'
-]);
-
-// Support Badge Label
-new \Kirki\Field\Text([
-    'settings' => 'footer_support_label',
-    'label'    => '"Free" Badge Text',
-    'section'  => 'footer_support',
-    'default'  => 'Free'
-]);
-
-// Support Email
-new \Kirki\Field\Text([
-    'settings' => 'footer_support_email',
-    'label'    => 'Support Email',
-    'section'  => 'footer_support',
-    'default'  => 'needhelp@mail.com'
-]);
+    new \Kirki\Field\Image(
+        [
+            'settings'    => 'logo_url',
+            'label'       => esc_html__( 'Logo', 'aidzone' ),
+            'description' => esc_html__( 'Please upload your logo here', 'aidzone' ),
+            'section'     => 'header_logo_section',
+            'default'     =>  get_template_directory_uri().'/assets/img/logo/logo.png',
+        ]
+    );
+    
+ 
+}
+header_logo_section();

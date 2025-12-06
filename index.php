@@ -1,15 +1,13 @@
-<?php
+<?php 
 get_header();
 
 ?>
 
-<?php
-echo "hello";
-?>
 
 
 
 
 
-<?php
+
+<?php 
 get_footer();
