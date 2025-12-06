@@ -75,9 +75,7 @@ endif;
 // aidzone_setup
 add_action('after_setup_theme', 'aidzone_setup');
 
-
-
-// theme css and js file 
+// theme css and js file enqueue
 function aidzone_theme_scripts()
 {
     // css 
@@ -101,10 +99,11 @@ function aidzone_theme_scripts()
     wp_enqueue_script('wow', get_template_directory_uri() . '/assets/js/wow.js', array('jquery'), '1.0', true);
     wp_enqueue_script('magnific-popup', get_template_directory_uri() . '/assets/js/magnific-popup.js', array('jquery'), '1.0', true);
     wp_enqueue_script('nice-select', get_template_directory_uri() . '/assets/js/nice-select.js', array('jquery'), '1.0', true);
-    wp_enqueue_script('nice-select', get_template_directory_uri() . '/assets/js/purecounter.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('purecounter', get_template_directory_uri() . '/assets/js/purecounter.js', array('jquery'), '1.0', true);
     wp_enqueue_script('appear', get_template_directory_uri() . '/assets/js/appear.js', array('jquery'), '1.0', true);
     wp_enqueue_script('knob', get_template_directory_uri() . '/assets/js/knob.js', array('jquery'), '1.0', true);
     wp_enqueue_script('slick', get_template_directory_uri() . '/assets/js/slick.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('imagesloaded', get_template_directory_uri() . '/assets/js/imagesloaded.js', array('jquery'), '1.0', true);
     wp_enqueue_script('parallax', get_template_directory_uri() . '/assets/js/parallax.js', array('jquery'), '1.0', true);
     wp_enqueue_script('parallax-scroll', get_template_directory_uri() . '/assets/js/parallax-scroll.js', array('jquery'), '1.0', true);
     wp_enqueue_script('isotope-pkgd', get_template_directory_uri() . '/assets/js/isotope-pkgd.js', array('imagesloaded'), '1.0', true);
@@ -117,3 +116,5 @@ function aidzone_theme_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'aidzone_theme_scripts');
+
+include_once('inc/aidzone-kirki.php');
