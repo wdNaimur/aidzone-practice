@@ -6,9 +6,7 @@
                    <div class="search-wrapper">
                        <div class="search-top d-flex justify-content-between align-items-center">
                            <div class="search-logo">
-                               <a href="index.html">
-                                   <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo-white.png" alt="">
-                               </a>
+                               <?php echo header_search_logo(); ?>
                            </div>
                            <div class="search-close">
                                <button type="button" class="search-close-btn search-close-btn">
@@ -23,9 +21,9 @@
                            </div>
                        </div>
                        <div class="search-form">
-                           <form action="#">
+                           <form action="/" method="get">
                                <div class="search-input">
-                                   <input class="search-input-field" type="text" placeholder="Type here to search...">
+                                   <input class="search-input-field" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr__('Type here to search...', 'aidzone') ?>">
                                    <span class="search-focus-border"></span>
                                    <button type="submit">
                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
