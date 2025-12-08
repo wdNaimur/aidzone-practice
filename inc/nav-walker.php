@@ -140,13 +140,13 @@ class Aidzone_Walker_Nav_Menu extends Walker
 
 		$classes   = empty($menu_item->classes) ? array() : (array) $menu_item->classes;
 		$classes[] = 'menu-item-' . $menu_item->ID;
-        // if we need li custom class
+		// if we need li custom class
 		// $classes[] = 'menu-li-custom-class';
 
-        // if html li has custom dropdown class 
-        // if($args->walker->has_children == true) {
-		//     $classes[] = 'custom-dropdown-menu-class';
-        // }
+		// if html li has custom dropdown class 
+		if ($args->walker->has_children == true) {
+			$classes[] = 'custom-dropdown-menu-class';
+		}
 
 		/**
 		 * Filters the arguments for a single nav menu item.
